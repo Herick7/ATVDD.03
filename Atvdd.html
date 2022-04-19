@@ -1,0 +1,161 @@
+<! DOCTYPE html>
+<html lang="pt-br">
+<cabeça>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="ícone de atalho" tipo="imagex/png" href="./img/tacsite.ico">
+    <título>Sistema de Avaliação</título>
+    <tipo de estilo="texto/css">
+ . título{
+            display: flex;
+            itens de alinhamento: centro;
+            justificar-conteúdo: centro;
+            fonte-família: Georgia, 'Times New Roman', Times, serif;
+            tamanho da fonte: 30px;
+        }
+ . botão {
+        posição: relativo;
+        esquerda: 50px;
+        inferior: -20px;
+      borda: 5px verde duplo;
+      raio-fronteira: 30px;
+      cor: preto;
+      preenchimento: 15px 32px;
+      alinhamento de texto: centro;
+      text-decoração: nenhum;
+      display: bloco de linha;
+      tamanho da fonte: 16px;
+      margem: 4px 2px;
+      cursor: ponteiro;
+      transição:.2s;
+      cor de fundo: branco;
+    }
+ . botão:ativo{
+    cor de fundo: #503230;
+    transição:.2s;
+    }
+    #texto{
+        largura: 300px;
+    }
+ . esconder{
+        exibição: nenhum;
+        posição: relativo;
+        esquerda: 50px;
+        margem-topo: 20px;
+    }
+    textarea{
+        redimensionar: nenhum;
+
+    }
+    camposet{
+        posição: relativo;
+        esquerda: 50px;
+        fonte-família: Arial, Helvetica, sans-serif;
+        margem-superior: 14px;
+        flex-direção: coluna;
+        largura: max-content;
+        borda: 2px verde sólido;
+     
+    }
+    lenda{
+         peso-fonte: mais ousado;
+         tamanho da fonte: 18px;  
+    }
+    #yname{
+        tamanho da fonte: 15px;
+        fonte-família: Arial, Helvetica, sans-serif;
+        posição: relativo;
+        esquerda: 50px;
+    }
+ . tópico{
+        exibição: bloco;
+        fonte-família: Verdana, Genebra, Tahoma, sans-serif;
+    }
+    </estilo>
+</cabeça>
+<corpo >
+    < h2 class="title"> Sistema de Avaliação Online </h2>
+    <forma>
+
+        <div id="yname"><b>Seu Nome:</b> <input type="text" id="texto"/><br></div>
+        <camposet>
+        <lenda> 1. Qual curso Técnico do Amélia é da área de Tecnologia? </legend>
+        <selecionar para="Selecionar" nome="sel" id="Q01"> 
+        <opção id="v0" valor="nenhum"> nenhum </opção>    
+        <opção id="v1" valor= Administração>Administração</opção>
+        <opção id="v2" valor= Informática>Informática</opção>
+        <opção id="v3" valor= Enfermagem>Enfermagem</opção>
+        <tipo de entrada="reset" nome="VF" classe="nenhum"> <br>
+        </selecionar>
+        </camposet>
+        
+        <camposet>
+            <lenda>2. Quais cursos são ofertados na EEEP Amélia Figueiredo de Lavor? </legend>
+            <textarea nome="tex1" id="Q02" cols="56" rows="5"></textarea> <br>
+        </camposet>
+        <camposet>
+            <lenda>3. Marque as opções que possuem os sistemas de numerações novos que 
+                    aprendemos no 1º de Informática</legend>
+        Sistema Octal <input type="checkbox" id="check1"> <br>
+ Sistema Binário <input tipo="caixa de seleção" id="check2"> <br>
+        Sistema Decimal <input type="checkbox" id="check3"> <br>
+        Algarismos Hexadecimal <input type="checkbox" id="check4"> <br>
+        </camposet>
+        <camposet>
+         <lenda>4. Qual o produto abaixo é mais adequado para limpar uma memória RAM? </legend>
+            <rótulo para="iso">Álcool Isopropílico</rótulo>
+            <tipo de entrada="rádio" nome="limpeza" id="iso"> <br>
+            <rótulo para="con">Limpa Contato</rótulo>
+            <tipo de entrada="rádio" nome="limpeza" id="con"> <br>
+            <rótulo para="alc">Álcool 70%</rótulo>
+            <tipo de entrada="rádio" nome="limpeza" id="alc"> <br>
+            <rótulo para="agu">Água</rótulo> 
+            <tipo de entrada="rádio" nome="limpeza" id="agu"> <br> 
+            <tipo de entrada="reset" class="none" name="cleat" id="cle"> <br> 
+        </camposet> 
+
+        <camposet>
+            <lenda>5. Podemos afirma que o modo de funcionamento de memória RAM em<br> 
+                DUAL CHANNEL só pode ser feito com pares de módulos de memória. 
+                Marque se a afirmação é verdadeira ou falsa.
+            </lenda>
+            <rótulo para="ver">Verdadeira</rótulo>
+            <tipo de entrada="rádio" nome="VF" id="ver"> <br>
+            <rótulo para="fal">Falsa</rótulo> 
+            <tipo de entrada="rádio" nome="VF" id="fal"> <br>
+            <tipo de entrada="reset" nome="VF" classe="nenhum"> <br>
+        </camposet>
+        
+        
+        <tipo de botão="botão" class="button" onclick="corrigir()"><b>Corrigir</b></botão>
+        <br>
+        <br>
+        <classe fieldset="esconder">
+            <lenda><b>Resumo</b></legend>
+            <div class="topic" id="corr"><b>CORREÇÃO</b></div>
+            <br>
+            <div class="cor" id="nome"></div>
+            < div class="cor" id="corretas"></div>
+            <div class="cor" id="percentual"></div>
+            <br>
+            <div class="topic" id="resp"><b> SUAS RESPOSTAS</b></div>
+            <br>
+            <div id="sel"></div>
+            <div id="area"></div>
+            <div id="cBox"></div>
+            <div id="rádio"></div>
+            <div id="vf"></div>
+            <br>
+            <div class="topic" id="resp"><b>GABARITO</b></div>
+            <br>
+            <div id="sel1"></div>
+            <div id="area1"></div>
+            <div id="cBox1"></div>
+            <div id="radio1"></div>
+            <div id="vf1"></div>
+        </camposet>
+    </forma>
+    <script src="script.js"></script>
+</corpo>
+</html>
